@@ -25,12 +25,12 @@ public class DoublyLinkedSortedList<E> implements ListInterface<E>, Iterable<E>{
 
     @Override
     public int size() {
-        return numElements;
+        return size;
     }
 
     @Override
     public boolean isEmpty() {
-        return numElements == 0;
+        return size == 0;
     }
 
     @Override
