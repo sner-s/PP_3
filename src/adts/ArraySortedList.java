@@ -24,12 +24,12 @@ public class ArraySortedList<E> implements ListInterface<E>, Iterable<E>{
 
     @Override
     public int size() {
-        return 0;
+        return numElements;
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return numElements == 0;
     }
 
     @Override
