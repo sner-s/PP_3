@@ -64,11 +64,14 @@ public class DoublyLinkedSortedList<E> implements ListInterface<E>, Iterable<E>{
         }
         return list.get(index);
     }
-
- public String arraytoString(int[] list) {
-    return Arrays.toString(list);
-}
-
+        Public string toString(){
+        StringBuilder listStr = new StringBuilder();
+    	for (int i = 0; i < numElements; i++) {
+    		listStr.append(list[i] + "\n");
+    	}
+	    return listStr.toString();
+        }
+    
     protected void find(E target) {
         //testing push
     }    
