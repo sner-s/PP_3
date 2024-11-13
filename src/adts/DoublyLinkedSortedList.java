@@ -15,11 +15,12 @@ public class DoublyLinkedSortedList<E> implements ListInterface<E>, Iterable<E>{
 
     @Override
     public void add(E element) {
-
+        //code goes here
     }
 
     @Override
     public boolean remove(E element) {
+        //code goes here
         return false;
     }
 
@@ -35,25 +36,37 @@ public class DoublyLinkedSortedList<E> implements ListInterface<E>, Iterable<E>{
 
     @Override
     public boolean contains(E element) {
+        //code goes here
         return false;
     }
 
     @Override
     public E get(E element) {
+        //code goes here
         return null;
     }
 
     @Override
     public E get(int index) {
+        //code goes here
         return null;
+    }
+
+    public String toString() {
+        //code goes here
+    }    
+
+    protected void find(E target) {
+        //code goes here
+    }    
+
+    public void setIterationType(/*Need arguement*/) {
+        //code goes here
     }
 
     @Override
     public Iterator<E> iterator() {
-        return null;
+        return new DoublyLinkedIterator<>(head, tail, iterationType);
     }
 
-    private enum IteratorType {
-        ORDERED, REVERSE, RANDOM
-    }
 }
