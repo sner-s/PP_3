@@ -55,9 +55,9 @@ public class DoublyLinkedSortedList<E> implements ListInterface<E>, Iterable<E>{
         return list.get(index);
     }
 
-    public String toString() {
-        //code goes here
-    }    
+ public String arraytoString(int[] list) {
+    return Arrays.toString(list);
+}
 
     protected void find(E target) {
         //code goes here
