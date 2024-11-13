@@ -40,16 +40,19 @@ public class DoublyLinkedSortedList<E> implements ListInterface<E>, Iterable<E>{
         return false;
     }
 
-    @Override
-    public E get(E element) {
-        //code goes here
-        return null;
+     @Override
+    // Retrieve an item by value
+    public E get(E item) {
+        int index = Collections.binarySearch(list, item);
+        return (index >= 0) ? list.get(index) : null;
     }
 
     @Override
-    public E get(int index) {
-        //code goes here
-        return null;
+     public E get(int index) {
+        if (index < 0 || index >= list.size()) {
+            throw new IndexOutOfBoundsException("Index out of bounds: " + index);
+        }
+        return list.get(index);
     }
 
     public String toString() {
