@@ -60,7 +60,7 @@ public class DoublyLinkedSortedList<E> implements ListInterface<E>, Iterable<E>{
 }
 
     protected void find(E target) {
-        //code goes here
+        //testing push
     }    
 
     public void setIterationType(/*Need arguement*/) {
