@@ -34,10 +34,17 @@ public class DoublyLinkedSortedList<E> implements ListInterface<E>, Iterable<E>{
         return size == 0;
     }
 
-    @Override
+   @Override
     public boolean contains(E element) {
-        //code goes here
-        return false;
+        DLLNode<E> current = head;
+
+        while (current != null) {
+            if (current.getData().equals(element)) {
+                return true;
+            }
+            current = current.getNext();
+        }
+    return false;
     }
 
      @Override
