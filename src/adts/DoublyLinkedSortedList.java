@@ -4,6 +4,8 @@ import interfaces.ListInterface;
 import iterators.DoublyLinkedIterator;
 import nodes.DLLNode;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Iterator;
 
 public class DoublyLinkedSortedList<E> implements ListInterface<E>, Iterable<E>{
@@ -12,6 +14,7 @@ public class DoublyLinkedSortedList<E> implements ListInterface<E>, Iterable<E>{
     private int size;         // Number of elements in the list
     private boolean found;    // Flag to check if element was found
     private DLLNode<E> location;  // Node where the element was found
+    private DoublyLinkedIterator.IteratorType iterationType = DoublyLinkedIterator.IteratorType.ORDERED;
 
     @Override
     public void add(E element) {
@@ -70,8 +73,8 @@ public class DoublyLinkedSortedList<E> implements ListInterface<E>, Iterable<E>{
         //testing push
     }    
 
-    public void setIterationType(/*Need arguement*/) {
-        //code goes here
+    public void setIterationType(DoublyLinkedIterator.IteratorType type) {
+        this.iterationType = type;
     }
 
     @Override
