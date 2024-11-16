@@ -54,7 +54,7 @@ public class DoublyLinkedSortedList<E> implements ListInterface<E>, Iterable<E>{
     // Retrieve an item by value
     public E get(E item) {
         int index = Collections.binarySearch(list, item);
-        return (index >= 0) ? list.get(index) : null;
+        return (index >= 0)? list.get(index) : null;
     }
 
     @Override
@@ -64,10 +64,10 @@ public class DoublyLinkedSortedList<E> implements ListInterface<E>, Iterable<E>{
         }
         return list.get(index);
     }
-        Public string toString(){
+        public string toString(){
         StringBuilder listStr = new StringBuilder();
-    	for (int i = 0; i < numElements; i++) {
-    		listStr.append(list[i] + "\n");
+    	for (int i = 0; i < list.size() i++) {
+    		listStr.append(list.get(i) + "\n");
     	}
 	    return listStr.toString();
         }
