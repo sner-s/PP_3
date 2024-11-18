@@ -22,10 +22,32 @@ public class DoublyLinkedSortedList<E> implements ListInterface<E>, Iterable<E>{
     }
 
     @Override
-    public boolean remove(E element) {
-        //code goes here//marilin
-        return false;
-    }
+    public boolean remove(E element) {	//MARILIN
+        find(element); 
+	    if (found) {
+	    	if(location == head) {
+	    		head = location.getNext();
+	    		if(head != null) {
+	    			head.setPrev(null);
+	    		}else {
+	    			tail = null;
+	    		}
+	    	}else if(location == tail) {
+	    		tail = location.getPrev();
+	    		if(tail != null) {
+	    			tail.setNext(null);
+	    		}else {
+	    			head = null;
+	    		}
+	    	}else {
+	    		location.getPrev().setNext(location.getNext());
+	    		location.getNext().setPrev(location.getPrev());
+	    	}
+	    	size--;
+	    	return true;
+	    	}
+	    return false; 
+	    }
 
     @Override
     public int size() {
