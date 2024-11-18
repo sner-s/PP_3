@@ -61,6 +61,12 @@ public class DoublyLinkedSortedList<E> implements ListInterface<E>, Iterable<E>{
 
    @Override
     public boolean contains(E element) {
+
+	//Needs to connect binary search.
+	//current state of contains is purely for testing purposes without binary search
+	//however end result requires the find method to perform the binary search.
+
+	    
         DLLNode<E> current = head;
 
         while (current != null) {
