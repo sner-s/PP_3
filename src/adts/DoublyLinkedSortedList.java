@@ -61,21 +61,8 @@ public class DoublyLinkedSortedList<E> implements ListInterface<E>, Iterable<E>{
 
    @Override
     public boolean contains(E element) {
-
-	//Needs to connect binary search.
-	//current state of contains is purely for testing purposes without binary search
-	//however end result requires the find method to perform the binary search.
-
-	    
-        DLLNode<E> current = head;
-
-        while (current != null) {
-            if (current.getData().equals(element)) {
-                return true;
-            }
-            current = current.getNext();
-        }
-    return false;
+	find(element)
+	return found;
     }
 
      @Override
@@ -100,9 +87,46 @@ public class DoublyLinkedSortedList<E> implements ListInterface<E>, Iterable<E>{
 	    return listStr.toString();
         }
     
-    protected void find(E target) {
-        //testing push
-    }    
+protected void find(E target) {
+     found = false;
+     location = null;
+
+     int start = 0;
+     int end = size - 1;
+
+     while (start <= end) {
+        int midpoint = (start + end) / 2;
+        DLLNode<E> nodeAtMid = getNodeAt(midpoint);
+
+        int result = ((Comparable<E>) target).compareTo(nodeAtMid.getData());
+        if (result == 0) {
+            found = true;
+            location = nodeAtMid;
+            return;
+        } else if (result < 0) {
+            end = midpoint - 1;
+        } else {
+            start = midpoint + 1;
+        }
+    }
+}
+
+private DLLNode<E> getNodeAt(int position) {
+    DLLNode<E> currentNode;
+    if (position < size / 2) {
+        currentNode = head;
+        for (int index = 0; index < position; index++) {
+            currentNode = currentNode.getNext();
+        }
+    } else {
+        currentNode = tail;
+        for (int index = size - 1; index > position; index--) {
+            currentNode = currentNode.getPrev();
+        }
+    }
+    return currentNode;
+}
+
 
     public void setIterationType(DoublyLinkedIterator.IteratorType type) {
         this.iterationType = type;
