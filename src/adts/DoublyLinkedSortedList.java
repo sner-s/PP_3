@@ -61,7 +61,7 @@ public class DoublyLinkedSortedList<E> implements ListInterface<E>, Iterable<E>{
 
    @Override
     public boolean contains(E element) {
-	find(element)
+	find(element);
 	return found;
     }
 
